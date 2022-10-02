@@ -10,6 +10,9 @@ class NewsPage extends StatefulWidget {
 class _NewsPageState extends State<NewsPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Container(color: Colors.amber),
+      appBar: AppBar(),
+    );
   }
 }
