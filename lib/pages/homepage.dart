@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:uwcforum/routes/routes.dart';
 
@@ -12,28 +13,21 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueAccent,
       appBar: AppBar(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed(RouteManager.loginPage);
-              },
-              child: const Text("Go to Login"),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed(RouteManager.forumPage);
-              },
-              child: const Text("Go to Forum"),
-            ),
-          ],
-        ),
+      bottomNavigationBar: CurvedNavigationBar(
+        animationDuration: const Duration(milliseconds: 250),
+        onTap: (value) {
+          Navigator.push(
+            context,
+            RouteManager.generateRoute(null, RouteManager().routesList[value]),
+          );
+        },
+        items: const [
+          Icon(Icons.person),
+          Icon(Icons.pages),
+          Icon(Icons.settings)
+        ],
       ),
     );
   }

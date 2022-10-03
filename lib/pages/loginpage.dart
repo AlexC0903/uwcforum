@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:uwcforum/Pages/homepage.dart';
+import 'package:uwcforum/Pages/profilepage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -12,8 +14,8 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Container(
-        color: Colors.green,
+      body: PageView(
+        children: const [HomePage(), ProfilePage()],
       ),
     );
   }

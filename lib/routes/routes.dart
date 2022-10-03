@@ -12,36 +12,76 @@ class RouteManager {
   static const String newsPage = '/news';
   static const String profilePage = '/profile';
   static const String forumPage = '/forum';
+  static const int _index = 0;
+  List<String> routesList = [
+    homePage,
+    loginPage,
+    newsPage,
+    profilePage,
+    forumPage
+  ];
 
-  static Route<dynamic> generateRoute(RouteSettings settings) {
-    switch (settings.name) {
-      case homePage:
-        return MaterialPageRoute(
-          builder: (context) => HomePage(),
-        );
+  static Route<dynamic> generateRoute(RouteSettings? settings, String name) {
+    if (settings != null) {
+      switch (settings.name) {
+        case homePage:
+          return MaterialPageRoute(
+            builder: (context) => HomePage(),
+          );
 
-      case loginPage:
-        return MaterialPageRoute(
-          builder: (context) => LoginPage(),
-        );
+        case loginPage:
+          return MaterialPageRoute(
+            builder: (context) => LoginPage(),
+          );
 
-      case newsPage:
-        return MaterialPageRoute(
-          builder: (context) => NewsPage(),
-        );
+        case newsPage:
+          return MaterialPageRoute(
+            builder: (context) => NewsPage(),
+          );
 
-      case profilePage:
-        return MaterialPageRoute(
-          builder: (context) => ProfilePage(),
-        );
+        case profilePage:
+          return MaterialPageRoute(
+            builder: (context) => ProfilePage(),
+          );
 
-      case forumPage:
-        return MaterialPageRoute(
-          builder: (context) => ForumPage(),
-        );
+        case forumPage:
+          return MaterialPageRoute(
+            builder: (context) => ForumPage(),
+          );
 
-      default:
-        throw const FormatException("Route not found");
+        default:
+          throw const FormatException("Route not found");
+      }
+    } else {
+      switch (name) {
+        case homePage:
+          return MaterialPageRoute(
+            builder: (context) => HomePage(),
+          );
+
+        case loginPage:
+          return MaterialPageRoute(
+            builder: (context) => LoginPage(),
+          );
+
+        case newsPage:
+          return MaterialPageRoute(
+            builder: (context) => NewsPage(),
+          );
+
+        case profilePage:
+          return MaterialPageRoute(
+            builder: (context) => ProfilePage(),
+          );
+
+        case forumPage:
+          return MaterialPageRoute(
+            builder: (context) => ForumPage(),
+          );
+
+        default:
+          throw const FormatException("Route not found");
+      }
     }
   }
 }
