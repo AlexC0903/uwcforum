@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
         onTap: (value) {
           Navigator.push(
             context,
-            RouteManager.generateRoute(null, RouteManager().routesList[value]),
+            RouteManager.generateRoute(RouteManager().routesList[value]),
           );
         },
         items: const [
