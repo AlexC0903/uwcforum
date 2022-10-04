@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:uwcforum/routes/routes.dart';
+import 'package:uwcforum/pages/homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,9 +11,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'UWC Forum',
-      initialRoute: RouteManager.homePage,
-      onGenerateRoute: RouteManager.generateRoute,
+      title: "uwcforum",
+      home: HomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

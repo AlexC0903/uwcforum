@@ -20,8 +20,9 @@ class RouteManager {
     forumPage
   ];
 
-  static Route<dynamic> generateRoute(var settings) {
-    switch ((settings != String) ? settings.name : settings) {
+  static generateRoute(RouteSettings settings) {
+    WidgetBuilder builder;
+    switch (settings.name) {
       case homePage:
         return MaterialPageRoute(
           builder: (context) => HomePage(),
